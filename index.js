@@ -14,7 +14,7 @@ const server = http.createServer(async (req, res) => {
     const data = await response.json();
     const feelsLike = data.current_condition[0].FeelsLikeF;
     res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end(`Feels like ${feelsLike}°F`);
+    res.end(`Feels like ${feelsLike}F`);
   } catch (err) {
     res.writeHead(500, { "Content-Type": "text/plain" });
     res.end("Failed to fetch weather data");
